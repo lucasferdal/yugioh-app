@@ -9,10 +9,10 @@
     <title>YuGiOh App</title>
 </head>
 
-<body>
+<body class="">
     <div class="container">
 
-        <select class='m-4' id="selecter">
+        <select class='m-4 w-25' id="selecterType">
             <option value='Ninguno' selected>Elegi un tipo de carta</option>
             <option value='Spell Card'>Spell Card</option>
             <option value='Trap Card'>Trap Card</option>
@@ -21,16 +21,45 @@
             <option value='Flip Effect Monster'>Flip Effect Monster</option>
             <option value='Union Effect Monster'>Union Effect Monster</option>
             <option value='Fusion Monster'>Fusion Monster</option>
-            <option value='Pendelum Effect Monster'>Pendelum Effect Monster</option>
+            <option value='Pendulum Effect Monster'>Pendelum Effect Monster</option>
             <option value='Link Monster'>Link Monster</option>
+            <option value="Synchro Monster">Synchro Monster</option>
+            <option value="Tuner Monster">Tuner Monster</option>
+            <option value="Ritual Monster">Ritual Monster</option>
+            <option></option>
         </select>
 
-        <button class='btn btn-secondary' id="boton">elegir</button>
+        <br>
+        
+        <select class='ms-4 w-25' id="selecterRace">
+            <option value="Nada" selected>Elegi un tipo de raza</option>
+            <option value="Aqua">Aqua</option>
+            <option value="Beast">Beast</option>
+            <option value="Beast-Warrior">Beast-Warrior</option>
+            <option value="Dinosaur">Dinosaur</option>
+            <option value="Dragon">Dragon</option>
+            <option value="Fairy">Fairy</option>
+            <option value="Fiend">Fiend</option>
+            <option value="Fish">Fish</option>
+            <option value="Insect">Insect</option>
+            <option value="Machine">Machine</option>
+            <option value="Plant">Plant</option>
+            <option value="Pyro">Pyro</option>
+            <option value="Reptile">Reptile</option>
+            <option value="Rock">Rock</option>
+            <option value="Sea Serpent">Sea Serpent</option>
+            <option value="Spellcaster">Spellcaster</option>
+            <option value="Thunder">Thunder</option>
+            <option value="Warrior">Warrior</option>
+            <option value="Winged Beast">Winged Beast</option>
+            <option value="Zombie">Zombie</option>
+            <option value=""></option>
+        </select>
+        
+        <button class='btn btn-secondary ms-3' id="boton">elegir</button>
         <hr>
 
-
         <div class='container' id="pantalla">
-
         </div>
     </div>
     <script src="./script.js"></script>
