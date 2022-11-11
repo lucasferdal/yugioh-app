@@ -1,7 +1,67 @@
-let pantalla = document.getElementById('pantalla')
-let selecterType = document.getElementById('selecterType')
-let selecterRace = document.getElementById('selecterRace')
-let boton = document.getElementById('boton')
+const pantalla = document.getElementById('pantalla')
+const selecterType = document.getElementById('selecterType')
+const selecterRace = document.getElementById('selecterRace')
+const boton = document.getElementById('boton')
+
+// function setClass() {
+//     const monster = ['Normal', 'Effect', 'Ritual', 'Fusion', 'Synchro', 'Xyz', 'Pendulum', 'Link', 'Tokens']
+//     const spell = ['Normal', 'Continuous', 'Equip', 'Quick-Play', 'Field']
+//     const trap = ['Normal', 'Continuous', 'Counter', 'Equip', 'Field']
+// }
+
+function cambio(clase) {
+    // const monster = ['Normal', 'Effect', 'Ritual', 'Fusion', 'Synchro', 'Xyz', 'Pendulum', 'Link', 'Tokens']
+    const monster = () => {
+        console.log('mostro')
+        selecterType.innerHTML = `
+        <option value='Ninguno' selected>Elegi un tipo de carta</option>
+        
+        <option value='Effect Monster'>Effect Monster</option>
+        
+        <option value='Normal Monster'>Normal Monster</option>
+        
+        <option value='Flip Effect Monster'>Flip Effect Monster</option>
+        
+            <option value='Union Effect Monster'>Union Effect Monster</option>
+            
+            <option value='Fusion Monster'>Fusion Monster</option>
+            
+            <option value='Pendulum Effect Monster'>Pendelum Effect Monster</option>
+            
+            <option value='Link Monster'>Link Monster</option>
+            
+            <option value="Synchro Monster">Synchro Monster</option>
+            
+            <option value="Tuner Monster">Tuner Monster</option>
+            
+            <option value="Ritual Monster">Ritual Monster</option>
+            `
+    }
+    // const spell = ['Normal', 'Continuous', 'Equip', 'Quick-Play', 'Field']
+    // const trap = ['Normal', 'Continuous', 'Counter', 'Equip', 'Field']
+    const spell = () => {
+        console.log('sep')
+        selecterType.innerHTML = `
+        <option value='Ninguno' selected>Elegi un tipo de carta</option>
+        
+        <option value='Spell Card'>Spell Card</option>
+        
+        `
+    }
+    const trap = () => {
+        console.log('ta')
+        selecterType.innerHTML = `
+        <option value='Ninguno' selected>Elegi un tipo de carta</option>
+
+            <option value='Trap Card'>Trap Card</option>
+            
+        `
+    }
+
+    (clase === 'Trap') ? trap() :
+    (clase === 'Monster') ? monster() : spell();
+
+}
 
 async function elFetch() {
     try {
@@ -10,12 +70,12 @@ async function elFetch() {
     } catch (error) {
         console.log('omar algo anda mal')
     }
-    console.log(dato.data)
+    // console.log(dato.data)
 
     boton.addEventListener('click', () => {
         let seleccionTipo = selecterType.options[selecterType.selectedIndex].value
         let seleccionRaza = selecterRace.options[selecterRace.selectedIndex].value
-        console.log(seleccionRaza)
+        console.log()
         pantalla.innerHTML = ''
 
 
@@ -53,6 +113,38 @@ async function elFetch() {
             element.type === seleccionTipo && element.race === seleccionRaza ? llamar() : null
         }
     })
-
+    
 }
 elFetch()
+
+    //                                 < li class="juana" > <a class='dropdown-item juan' name='Normal' href="#">Normal</a></li >
+    //                                 <li class="juana"><a class='dropdown-item juan' name='Effect' href="#">Effect</a></li>
+    //                                 <li class="juana"><a class='dropdown-item juan' name='Ritual' href="#">Ritual</a></li>
+    //                                 <li class="juana"><a class='dropdown-item juan' name='Fusion' href="#">Fusion</a></li>
+    //                                 <li class="juana"><a class='dropdown-item juan' name='Synchro' href="#">Synchro</a></li>
+    //                                 <li class="juana"><a class='dropdown-item juan' name='Xyz' href="#">Xyz</a></li>
+    //                                 <li class="juana"><a class='dropdown-item juan' name='Pendulum' href="#">Pendulum</a></li>
+    //                                 <li class="juana"><a class='dropdown-item juan' name='Link' href="#">Link</a></li>
+    //                                 <li class="juana"><a class='dropdown-item juan' name='Tokens' href="#">Tokens</a></li>
+    //                             </ul >
+    //                         </li >
+    //                         <li class="dropend">
+    //                             <a class='dropdown-item dropdown-toggle' data-bs-toggle='dropdown' href="#">Spell</a>
+    //                             <ul class="dropdown-menu">
+    //                                 <li><a class='dropdown-item' href="#">Normal</a></li>
+    //                                 <li><a class='dropdown-item' href="#">Continuous</a></li>
+    //                                 <li><a class='dropdown-item' href="#">Equip</a></li>
+    //                                 <li><a class='dropdown-item' href="#">Quick-Play</a></li>
+    //                                 <li><a class='dropdown-item' href="#">Field</a></li>
+    //                                 <li><a class='dropdown-item' href="#">Ritual</a></li>
+    //                             </ul>
+    //                         </li>
+    //                         <li class="dropend">
+    //                             <a class='dropdown-item dropdown-toggle' data-bs-toggle='dropdown' href="#">Trap</a>
+    //                             <ul class="dropdown-menu">
+    //                                 <li><a class='dropdown-item' href="#">Normal</a></li>
+    //                                 <li><a class='dropdown-item' href="#">Continuous</a></li>
+    //                                 <li><a class='dropdown-item' href="#">Counter</a></li>
+    //                                 <li><a class='dropdown-item' href="#">Equip</a></li>
+    //                                 <li><a class='dropdown-item' href="#">Field</a></li>
+    //                             </ul>
